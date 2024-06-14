@@ -43,17 +43,6 @@ allow {
 #	utils.hasPermission(input.matching_policy.grants, input.roles)
 #}
 
-# Allow the action if the user is granted permission to perform the action.
-allow {
-	# Find permissions for the user.
-	some permission
-	user_is_granted[permission]
-
-	# Check if the permission permits the action.
-	input.action == permission.action
-	input.type == permission.type
-}
-
 # user_is_chef is true if...
 user_is_chef {
 	some i
