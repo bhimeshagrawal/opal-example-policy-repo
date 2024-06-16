@@ -38,11 +38,9 @@ allow {
 }
 
 allow {
-	user := data.users[_]
-    	recipe := data.recipes[_]
-	user.id == input.user
-	recipe.id == input.recipe
-	user.location == recipe.location
+	some i
+	data.recipes[i].id == input.recipe
+	data.recipes[i].location = input.location
 }
 
 # Allow bob to do anything
