@@ -29,6 +29,13 @@ allow {
 	user_is_chef
 }
 
+allow {
+	some i, j
+	data.users[i].id == input.user
+	data.recipes[j].id == input.recipe
+	data.recipes[j].location == input.location
+}
+
 # Allow bob to do anything
 #allow {
 #	input.user == "bob"
