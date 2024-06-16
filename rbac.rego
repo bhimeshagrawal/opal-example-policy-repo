@@ -33,7 +33,7 @@ allow {
 	some i, j
 	data.users[i].id == input.user
 	data.recipes[j].id == input.recipe
-	user.location == recipe.location
+	data.users[i].location == data.recipes[j].location
 }
 
 # Allow bob to do anything
