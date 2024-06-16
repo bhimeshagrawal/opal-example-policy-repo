@@ -30,6 +30,14 @@ allow {
 }
 
 allow {
+	user := data.result.users[_]
+    	recipe := data.result.recipes[_]
+	user.id == input.user
+	recipe.id == input.recipe
+	user.location == recipe.location
+}
+
+allow {
 	user := data.users[_]
     	recipe := data.recipes[_]
 	user.id == input.user
