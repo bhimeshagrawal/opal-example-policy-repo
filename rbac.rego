@@ -30,10 +30,11 @@ allow {
 }
 
 allow {
-	some i, j
-	data.users[i].id == input.user
-	data.recipes[j].id == input.recipe
-	data.recipes[j].location == input.location
+	user := users[_]
+    	recipe := recipes[_]
+	user.id == input.user
+	recipe.id == input.recipe
+	user.location == recipe.location
 }
 
 # Allow bob to do anything
